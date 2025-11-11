@@ -78,5 +78,10 @@ vim.keymap.set("n", "<leader>xx", "<cmd>Trouble<cr>", {
 vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, { desc = "Format the code" })
 
 -- ToggleTerm
-vim.api.nvim_set_keymap("n", "<leader>tg", "<cmd>lua _lazygit_toggle()<CR>", {noremap = true, silent = true, desc = "Open lazygit terminal"})
-vim.api.nvim_set_keymap("n","<leader>tt", "<cmd>ToggleTerm direction=float<CR>",{desc = "Open Terminal"})
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>tg",
+	"<cmd>lua _lazygit_toggle()<CR>",
+	{ noremap = true, silent = true, desc = "Open lazygit terminal" }
+)
+vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>ToggleTerm direction=float<CR>", { desc = "Open Terminal" })
