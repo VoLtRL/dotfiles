@@ -3,5 +3,18 @@ return {{
     branch = "v3.x",
     dependencies = {"nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", "nvim-tree/nvim-web-devicons" -- optional, but recommended
     },
-    lazy = false -- neo-tree will lazily load itself
+    lazy = false, -- neo-tree will lazily load itself
+    config = function()
+        require("neo-tree").setup({
+            event_handlers = {{ -- auto-close neo tree on open file
+                event = "file_open_requested",
+                handler = function()
+                    require("neo-tree.command").execute({
+                        action = "close"
+                    })
+                end
+            }}
+        })
+    end
 }}
+

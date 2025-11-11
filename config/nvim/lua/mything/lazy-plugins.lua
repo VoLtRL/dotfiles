@@ -9,31 +9,41 @@
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require('lazy').setup({require 'mything.plugins.treesitter', require 'mything.plugins.telescope',
-                       require 'mything.plugins.kanagawa', require 'mything.plugins.which-key',
-                       require 'mything.plugins.neo-tree', require 'mything.plugins.alpha-nvim',
-                       require 'mything.plugins.lsp-config'}, {
-    ui = {
-        -- If you are using a Nerd Font: set icons to an empty table which will use the
-        -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-        icons = vim.g.have_nerd_font and {} or {
-            cmd = '⌘',
-            config = '🛠',
-            event = '📅',
-            ft = '📂',
-            init = '⚙',
-            keys = '🗝',
-            plugin = '🔌',
-            runtime = '💻',
-            require = '🌙',
-            source = '📄',
-            start = '🚀',
-            task = '📌',
-            lazy = '💤 '
-        }
-    }
+require("lazy").setup({
+	require("mything.plugins.treesitter"),
+	require("mything.plugins.telescope"),
+	require("mything.plugins.kanagawa"),
+	require("mything.plugins.which-key"),
+	require("mything.plugins.neo-tree"),
+	require("mything.plugins.alpha-nvim"),
+	require("mything.plugins.lsp-config"),
+	require("mything.plugins.lualine"),
+	require("mything.plugins.trouble"),
+	require("mything.plugins.none-ls"),
+	require("mything.plugins.autocomplete"),
+	require("mything.plugins.terminal")
+}, {
+	ui = {
+		-- If you are using a Nerd Font: set icons to an empty table which will use the
+		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+		icons = vim.g.have_nerd_font and {} or {
+			cmd = "⌘",
+			config = "🛠",
+			event = "📅",
+			ft = "📂",
+			init = "⚙",
+			keys = "🗝",
+			plugin = "🔌",
+			runtime = "💻",
+			require = "🌙",
+			source = "📄",
+			start = "🚀",
+			task = "📌",
+			lazy = "💤 ",
+		},
+	},
 })
 
 -- LSP config
 
-vim.lsp.enable('pyright')
+vim.lsp.enable("pyright")
