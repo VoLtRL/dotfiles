@@ -13,7 +13,7 @@ return {
 			"mason-org/mason.nvim",
 		},
 		lazy = false,
-		ensure_installed = { "lua_ls" },
+		ensure_installed = { "lua_ls", "pyright" },
 		auto_install = true,
 	},
 	{

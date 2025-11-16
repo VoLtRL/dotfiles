@@ -12,7 +12,7 @@
 require("lazy").setup({
 	require("mything.plugins.treesitter"),
 	require("mything.plugins.telescope"),
-	require("mything.plugins.kanagawa"),
+	require("mything.plugins.theme"),
 	require("mything.plugins.which-key"),
 	require("mything.plugins.neo-tree"),
 	require("mything.plugins.alpha-nvim"),
@@ -21,7 +21,8 @@ require("lazy").setup({
 	require("mything.plugins.trouble"),
 	require("mything.plugins.none-ls"),
 	require("mything.plugins.autocomplete"),
-	require("mything.plugins.terminal")
+	require("mything.plugins.terminal"),
+    require("mything.plugins.colorizer")
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
