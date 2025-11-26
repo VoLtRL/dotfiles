@@ -1,37 +1,71 @@
 {
-  "style": "~/.config/waybar/style.css",
-  
   "layer": "top",
   "position": "top",
-  "height": 40,
-  
+  "margin": 10,
+  "spacing": 8,
+
   "modules-left": [
-    "custom/launcher",
-    "hyprland/workspaces",
-    "custom/weather",
-    "custom/updates",
-    "custom/cava"
-  ],
-  
-  "modules-center": [
-    "memory",
-    "cpu",
-    "temperature"
-  ],
-  
-  "modules-right": [
-    "idle_inhibitor",
-    "battery",
-    "hyprland/language",
-    "keyboard-state",
-    "backlight",
-    "pulseaudio",
-    "network",
-    "custom/vpn",
-    "clock",
-    "custom/notification",
-    "tray"
+    "custom/logo",
+    "hyprland/workspaces"
   ],
 
-  "include": "~/.config/waybar/modules.jsonc"
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "battery"
+  ],
+
+  "custom/logo": {
+    "format": "󰣇", // logo Arch ou autre icône
+    "tooltip": "Hyprland",
+    "interval": 600
+  },
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": ""
+    },
+    "active-only": false
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A %d %B %Y}"
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈁  Ethernet",
+    "format-disconnected": "",
+    "tooltip": true
+  },
+    "bluetooth": {
+    "format": "",
+    "format-disabled": "",
+    "format-connected": " {device_alias}"
+  },
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "format-muted": "󰝟",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": true
+  }
 }
+
